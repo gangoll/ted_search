@@ -39,9 +39,7 @@ pipeline {
             }
         
         stage('test') {
-            // when{
-            //     expression { TEAM == 'devops' } *
-            // }
+            
             steps { 
                  dir('app'){
                     script{             //if script returns 1 the job will fail!!
@@ -63,7 +61,7 @@ pipeline {
         }
         steps
         {
-        //  sh label: '', script: 'terraform init'
+        
           script{             //if script returns 1 the job will fail!!
                         echo "depploying..."
                         sh "terraform init || true"
